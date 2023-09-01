@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebSocket</title>
+
+    <style>
+      body {
+        background-color: #eee;
+      }
+
+      .chat__box::-webkit-scrollbar {
+        display: none;
+      }
+
+      .chat__box {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      .chat__box {
+        width: 50vw;
+        height: 80vh;
+        border: 1px solid black;
+        margin: 20px auto;
+        overflow: scroll;
+        padding: 10px;
+      }
+
+      @media only screen and (max-width: 760px) {
+        .chat__box {
+          width: 90vw;
+        }
+      }
+
+      .chat__box-header {
+        color: gray;
+        width: inherit;
+        font-size: 14px;
+        margin: 0 auto;
+        margin-top: 5px;
+        text-align: center;
+        background-color: white;
+      }
+
+      .your__chat {
+        display: block;
+        float: right;
+        padding: 4px 8px;
+        background-color: rgb(55, 55, 55);
+        color: white;
+        border-radius: 4px;
+        margin-bottom: 8px;
+        clear: right;
+      }
+
+      .other__chats {
+        clear: right;
+        background-color: aliceblue;
+        padding: 4px 8px;
+        width: fit-content;
+        border-radius: 4px;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .chat-alert {
+        clear: right;
+        width: fit-content;
+        border-radius: 2px;
+        background-color: rgb(210, 240, 230);
+        font-size: 12px;
+        padding: 2px 6px;
+        margin: 6px auto;
+      }
+
+      .flex {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+      }
+
+      .chat__input {
+        width: 50vw;
+        border: 1px solid black;
+        height: 2.5em;
+        margin-right: 0;
+      }
+
+      .chat__send {
+        margin-left: 0;
+        background: none;
+        border-radius: 0;
+        border: 1px solid black;
+        border-left: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat__box">
+      <div id="chatbox"></div>
+    </div>
+    <form class="flex" onsubmit="return false;">
+      <input id="chat-input" type="text" class="chat__input" />
+      <button id="chat-send" class="chat__send" onclick="sendData()">
+        Send &rarr;
+      </button>
+    </form>
+  </body>
+
+  <script src="./script.js"></script>
+</html>
